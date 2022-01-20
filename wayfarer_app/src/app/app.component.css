@@ -1,11 +1,13 @@
 #app-container {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
-#content-container {
-  background: green;
-  top: 0;
+app-search {
+  padding: 1em;
+  text-align: end;
+}
+
+section {
+  background-color: green;
 }
