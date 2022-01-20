@@ -1,0 +1,17 @@
+header {
+  background: #404040;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 4em;
+}
+
+#header-nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+input {
+  max-width: 15%;
+}

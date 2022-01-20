@@ -1,0 +1,14 @@
+<header>
+  <h1>Wayfarer</h1>
+  <nav>
+    <ul id="header-nav" ngbNav #nav="ngbNav" class="nav-pills">
+      <li ngbNavItem>
+        <a ngbNavLink>First</a> <!-- update Links if any-->
+      </li>
+      <li ngbNavItem>
+        <a ngbNavLink>Second</a> <!-- update Links if any-->
+      </li>
+    </ul>
+    <div [ngbNavOutlet]="nav"></div>
+  </nav>
+</header>
