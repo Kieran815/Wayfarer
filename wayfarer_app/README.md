@@ -1,5 +1,21 @@
 # WayfarerApp
 
+## Links
+[How To Build An Angular 12 Application With Google Places Autocomplete](https://www.c-sharpcorner.com/article/how-to-build-an-angular-12-application-with-google-places-autocomplete/)
+
+[Google Cloud Platform](https://console.cloud.google.com/)
+
+[Adding City Images to My React App](https://codeburst.io/adding-city-images-to-your-react-app-14c937df2db2)
+
+[Setup dotenv to Access Environment Variables in Angular](https://javascript.plainenglish.io/setup-dotenv-to-access-environment-variables-in-angular-9-f06c6ffb86c0)
+
+[How to use CORS to implement JavaScript Google Places API request](https://stackoverflow.com/questions/42180788/how-to-use-cors-to-implement-javascript-google-places-api-request)
+
+[ngx-google-places-autocomplete](https://www.npmjs.com/package/ngx-google-places-autocomplete)
+
+
+-------------------------------
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
 ## Development server

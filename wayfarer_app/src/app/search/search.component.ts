@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
+import { CityService } from '../city.service';
+
 
 @Component({
   selector: 'app-search',
@@ -10,15 +12,35 @@ export class SearchComponent implements OnInit {
 
   city: string = '';
 
-  constructor(private https: HttpClient) { }
+  currentCity: object = {};
+  // places example
+  userCity: string = ''
+  cityLatitude: string = ''
+  cityLongitude: string = ''
+  cityPhotos: any = [];
+
+  constructor(private cityService: CityService) { }
+
+  handleCityChange(city: any) {
+    this.userCity = city.name;
+    this.cityLatitude = city.geometry.location.lat();
+    this.cityLongitude = city.geometry.location.lng();
+    this.cityPhotos = city.photos;
+    this.currentCity = city;
+    console.log(this.currentCity);
+    this.sendNewData(this.currentCity);
+  }
 
   findCity(city: string){
     console.log('finding ' + city);
-    this.https.get('https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Chicago, IL&key=AIzaSyBFbFHBJaQlcbbBde-_ryMc7TyfU7moNEo&inputtype=textquery&fields=name,photos')
-    .subscribe((response) => console.log(response));
   }
 
   ngOnInit(): void {
+    this.sendNewData(this.currentCity);
+  }
+
+  sendNewData(sendCity: object) {
+    this.cityService.sendData(sendCity);
   }
 
 }
