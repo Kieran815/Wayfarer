@@ -6,12 +6,16 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class CityService {
 
-  private dataSource: BehaviorSubject<object> = new BehaviorSubject<object>({testingDataTransfer: "Empty City String"});
+  // create a behavior subject to watch and assign initial value
+  private dataSource: BehaviorSubject<object> = new BehaviorSubject<object>({testingDataTransfer: "Sending Initial Value from city.service"});
+  // begin watching behavior subject
   data: Observable<object> = this.dataSource.asObservable();
 
   constructor() { }
 
+  
   sendData(data: object) {
+    // broadcast new data on update
     this.dataSource.next(data);
   }
 }

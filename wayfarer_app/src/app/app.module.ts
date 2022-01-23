@@ -5,14 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
+import { CitySearchModule } from './city-search/city-search.module';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -20,15 +19,14 @@ import { SearchComponent } from './search/search.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SearchComponent,
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    AppRoutingModule,
-    FormsModule,
     HttpClientModule,
-    GooglePlaceModule
+    FormsModule,
+    AppRoutingModule,
+    CitySearchModule
   ],
   providers: [],
   bootstrap: [AppComponent]

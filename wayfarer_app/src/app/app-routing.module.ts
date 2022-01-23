@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LandingComponent } from './landing/landing.component';
-import { CityComponent } from './city/city.component';
-import { PostComponent } from './post/post.component';
+import { CityComponent } from './city-search/city/city.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 
 const routes: Routes = [
@@ -15,10 +14,10 @@ const routes: Routes = [
     path: 'city',
     component: CityComponent
   },
-  {
-    path: 'post',
-    component: PostComponent
-  },
+  // {
+  //   path: 'post',
+  //   component: PostComponent
+  // },
   {
     path: '**',
     component: FourOhFourComponent

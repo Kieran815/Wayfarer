@@ -1,0 +1,9 @@
+<app-search></app-search>
+
+<h1>
+  {{ selectedCityName }}
+</h1>
+
+<div class="container" id="search-results">
+  <img *ngFor="let pic of selectedCityPhotos" src={{pic.getUrl()}} />
+</div>

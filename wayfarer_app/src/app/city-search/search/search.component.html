@@ -1,0 +1,9 @@
+<section>
+  Search City:
+  <input
+    [(ngModel)]="city"
+    ngx-google-places-autocomplete
+    (onAddressChange)="handleCityChange($event)"
+    type="text" placeholder="Enter City Name"
+  />
+</section>
