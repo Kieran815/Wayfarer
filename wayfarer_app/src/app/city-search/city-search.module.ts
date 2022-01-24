@@ -7,12 +7,14 @@ import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PhoneBookComponent } from './phone-book/phone-book.component';
 
 @NgModule({
   declarations: [
     CityComponent,
     PostComponent,
-    SearchComponent
+    SearchComponent,
+    PhoneBookComponent
   ],
   imports: [
     CommonModule,
