@@ -1,9 +1,28 @@
 <app-search></app-search>
 
-<h1>
-  {{ selectedCityName }}
-</h1>
+<div *ngIf="selectedCityFullName == undefined">
+  I am some conditional content
+</div>
 
-<div class="container" id="search-results">
-  <img *ngFor="let pic of selectedCityPhotos" src={{pic.getUrl()}} />
+<div class="container" id="search-results" *ngIf="selectedCityFullName">
+  <section id="title">
+    <h1>
+      {{selectedCityShortName}}
+    </h1>
+    <span>
+      {{ selectedCityFullName }}
+    </span>
+  </section>
+
+  <a id="official-site" *ngIf="selectedCityWebsite" href={{selectedCityWebsite}} target="_blank" rel="noopener noreferrer">
+    Visit {{selectedCityShortName}}'s Official Website
+  </a>
+
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let pic of selectedCityPhotos">
+      <img [src]="pic.getUrl()" alt="Random slide">
+    </ng-template>
+  </ngb-carousel>
+
+  <app-post></app-post>
 </div>

@@ -6,7 +6,7 @@ import { SearchComponent } from './search/search.component';
 
 import { FormsModule } from '@angular/forms';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,6 +17,7 @@ import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
   imports: [
     CommonModule,
     FormsModule,
+    NgbModule,
     // import for Google Places api
     GooglePlaceModule
   ]

@@ -1,1 +1,19 @@
 <p>post works!</p>
+<section *ngIf="googlePlaceReviews.length > 0">
+  <div class="card" id="card-template" *ngFor="let post of googlePlaceReviews">
+    <div class="card-header">
+      <img class="card-img-top" src="{{post.profile_photo_url}}" alt='{{post.author_name}}Profile Pic'>
+      <a href="{{post.author_url}}" target="_blank" rel="noopener noreferrer">Author Name: {{post.author_name}}</a> <!---->
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{post.text.substring(0, 100)}}</h5>
+      <section id='rating-span'>
+        <span>{{post.rating}} / 5, as of {{post.relative_time_description}}</span>
+        <span class="card-text">{{this.stampToTime(post.time)}}</span>
+      </section>
+      <br />
+      <p class="card-text">{{post.text.substring(0, 1000)}}</p>
+    </div>
+    <button *ngIf="post.text.length > 1000">Read More...</button>
+  </div>
+</section>

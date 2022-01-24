@@ -1,3 +1,10 @@
 section {
-  background: purple;
+  background: yellow;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+span {
+  padding-right: 1em;
 }

@@ -13,6 +13,10 @@
 
 [ngx-google-places-autocomplete](https://www.npmjs.com/package/ngx-google-places-autocomplete)
 
+[Dynamic Carousel In Angular](https://stackblitz.com/edit/dynamic-carousel-in-angular?file=src%2Fapp%2Fcarousel%2Fcarousel.component.html)
+
+[Google Maps Platform Place Details](https://developers.google.com/maps/documentation/places/web-service/details#PlaceReview)
+
 
 -------------------------------
 

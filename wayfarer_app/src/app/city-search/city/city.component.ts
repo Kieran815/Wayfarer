@@ -11,8 +11,10 @@ export class CityComponent implements OnInit {
 
   // empty vars for city service response object
   selectedCity: object = {};
-  selectedCityName: string = '';
+  selectedCityFullName: string | undefined;
+  selectedCityShortName: string = '';
   selectedCityPhotos: any = [];
+  selectedCityWebsite: string = '';
 
   constructor(private cityService: CityService) { }
 
@@ -25,10 +27,11 @@ export class CityComponent implements OnInit {
     this.cityService.data.subscribe((response: any) => {
       console.log("City Component Get Data Response: ", response);
       this.selectedCity = response;
-      console.log(`Selected City Object: `, this.selectedCity);
-      this.selectedCityName = response.name;
+      // console.log(response.geometry.location.lat);
+      this.selectedCityFullName = response.formatted_address;
+      this.selectedCityShortName = response.name;
       this.selectedCityPhotos = response.photos;
-
+      this.selectedCityWebsite = response.website;
     })
   }
 
