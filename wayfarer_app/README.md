@@ -1,21 +1,8 @@
-# WayfarerApp
+# [Wayfarer](https://kmilligan.info/Wayfarer)
 
-## Links
-[How To Build An Angular 12 Application With Google Places Autocomplete](https://www.c-sharpcorner.com/article/how-to-build-an-angular-12-application-with-google-places-autocomplete/)
+## Find Your Way
 
-[Google Cloud Platform](https://console.cloud.google.com/)
-
-[Adding City Images to My React App](https://codeburst.io/adding-city-images-to-your-react-app-14c937df2db2)
-
-[Setup dotenv to Access Environment Variables in Angular](https://javascript.plainenglish.io/setup-dotenv-to-access-environment-variables-in-angular-9-f06c6ffb86c0)
-
-[How to use CORS to implement JavaScript Google Places API request](https://stackoverflow.com/questions/42180788/how-to-use-cors-to-implement-javascript-google-places-api-request)
-
-[ngx-google-places-autocomplete](https://www.npmjs.com/package/ngx-google-places-autocomplete)
-
-[Dynamic Carousel In Angular](https://stackblitz.com/edit/dynamic-carousel-in-angular?file=src%2Fapp%2Fcarousel%2Fcarousel.component.html)
-
-[Google Maps Platform Place Details](https://developers.google.com/maps/documentation/places/web-service/details#PlaceReview)
+Powered by Google Places, Wayfarer is designed to let you gather concise information about the places you want to visit.
 
 
 -------------------------------
@@ -26,22 +13,25 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+**Register for a Google API @ [Google Cloud Platform](https://console.cloud.google.com/).**
+- add api key to google script tag in `index.html`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Links
+[How To Build An Angular 12 Application With Google Places Autocomplete](https://www.c-sharpcorner.com/article/how-to-build-an-angular-12-application-with-google-places-autocomplete/)
 
-## Build
+[ngx-google-places-autocomplete](https://www.npmjs.com/package/ngx-google-places-autocomplete)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+[Google Maps Platform Place Details](https://developers.google.com/maps/documentation/places/web-service/details#PlaceReview)
 
-## Running unit tests
+[Google Cloud Platform](https://console.cloud.google.com/)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[Adding City Images to My React App](https://codeburst.io/adding-city-images-to-your-react-app-14c937df2db2)
 
-## Running end-to-end tests
+[Dynamic Carousel In Angular](https://stackblitz.com/edit/dynamic-carousel-in-angular?file=src%2Fapp%2Fcarousel%2Fcarousel.component.html)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Todo List:
+Styling on components;
+Fix type error for expected undefined variable
+Synthetic routing for places
+Render Weather in Modal
