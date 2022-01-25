@@ -12,7 +12,6 @@ export class CityService {
   data: Observable<object> = this.dataSource.asObservable();
 
   constructor() { }
-
   
   sendData(data: object) {
     // broadcast new data on update
