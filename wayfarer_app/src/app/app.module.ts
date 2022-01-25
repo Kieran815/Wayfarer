@@ -8,17 +8,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { CitySearchModule } from './city-search/city-search.module';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { LandingComponent } from './landing/landing.component';
+import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
+    LandingComponent,
+    FourOhFourComponent,
   ],
   imports: [
     BrowserModule,

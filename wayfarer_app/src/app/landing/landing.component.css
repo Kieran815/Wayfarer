@@ -1,15 +1,30 @@
-.carousel-inner {
-  height: 32rem;
-  margin-top: 5rem;
-  background-color: rgba(119, 119, 119, 0.342);
-  box-shadow: 8px 9px 17px 3px rgba(125,125,125,0.52), -8px -3px 17px 3px rgba(125,125,125,0.52); 
-  
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* .carousel-inner {
+    height: 32rem;
+    margin-top: 5rem;
+    background-color: rgba(119, 119, 119, 0.342);
+    box-shadow: 8px 9px 17px 3px rgba(125,125,125,0.52), -8px -3px 17px 3px rgba(125,125,125,0.52); 
+    
 }
 .carousel-item {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 75%;
-  margin: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+} */
+
+img {
+  max-height:700px;
+  object-fit: contain;
+}
+
+#enter-site {
+  position: fixed;
+  top: 50%;
+  right: 50%;
 }
