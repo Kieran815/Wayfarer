@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { CityService } from '../city.service';
+
 
 @Component({
   selector: 'app-post',
@@ -9,14 +10,11 @@ import { CityService } from '../city.service';
 })
 export class PostComponent implements OnInit {
 
-  googlePlaceReviews: any[] = [];
-  // authorName: string | undefined;
-  // authorUrl: string | undefined;
-  // authorPic: string | undefined;
-  // rating: number | undefined;
-  // reviewBody: string | undefined;
+  closeResult = '';
 
-  constructor(private cityService: CityService) { }
+  googlePlaceReviews: any[] = [];
+
+  constructor(private cityService: CityService, private modalService: NgbModal) { }
   ngOnInit(): void {
     // get placeId for google reviews
     this.getData();
@@ -24,7 +22,7 @@ export class PostComponent implements OnInit {
 
   stampToTime(time: number): any {
     let date = new Date(time * 1000);
-    return date;
+    return date.toLocaleString();
   }
 
   getData() {
@@ -36,6 +34,10 @@ export class PostComponent implements OnInit {
         this.stampToTime(this.googlePlaceReviews[4].time);
       };
     })
+  }
+
+  open(content: any) {
+    this.modalService.open(content);
   }
 
 

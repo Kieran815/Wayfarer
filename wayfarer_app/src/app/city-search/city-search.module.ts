@@ -5,6 +5,7 @@ import { PostComponent } from './post/post.component';
 import { SearchComponent } from './search/search.component';
 
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PhoneBookComponent } from './phone-book/phone-book.component';
@@ -19,6 +20,7 @@ import { PhoneBookComponent } from './phone-book/phone-book.component';
   imports: [
     CommonModule,
     FormsModule,
+    HttpClientModule,
     NgbModule,
     // import for Google Places api
     GooglePlaceModule

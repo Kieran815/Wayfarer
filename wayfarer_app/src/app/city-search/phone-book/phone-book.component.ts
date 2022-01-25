@@ -14,6 +14,7 @@ export class PhoneBookComponent implements OnInit {
   selectedCityId: string | undefined = '';
   selectedCityFullName: string | undefined;
   selectedCityShortName: string = '';
+  selectedCityZipCode: string | undefined = '';
   selectedCityPhotos: any = [];
   selectedCityWebsite: string = '';
 
@@ -25,19 +26,14 @@ export class PhoneBookComponent implements OnInit {
   getData() {
     this.cityService.data.subscribe((response: any) => {
       this.selectedCity = response;
-      console.log("Phone Book Component Get Data Response: ", this.selectedCity);
       this.selectedCityId = response.place_id;
-      console.log(this.selectedCityId);
       this.selectedCityFullName = response.formatted_address;
-      console.log(this.selectedCityFullName);
       this.selectedCityShortName = response.name;
-      console.log(this.selectedCityShortName);
+      if(response.address_components) {
+        this.selectedCityZipCode = response.address_components[7].long_name;
+      }
       this.selectedCityPhotos = response.photos;
-      console.log(this.selectedCityPhotos);
       this.selectedCityWebsite = response.website;
-      console.log(this.selectedCityWebsite);
     })
-    console.log("City ID: " + this.selectedCityId);
   }
-
 }

@@ -1,26 +1,32 @@
-<div *ngIf="selectedCityFullName == undefined">
-  I am some conditional content
+<div class="card" *ngIf="selectedCityFullName == undefined">
+  <h3>Search for What's Out There</h3>
+  <h4>Get Location and Review information to plan your next outing.</h4>
 </div>
 
-<div class="container" id="search-results" *ngIf="selectedCityFullName">
+<div class="card" id="search-results" *ngIf="selectedCityFullName">
   <section id="title">
     <h1>
       {{selectedCityShortName}}
     </h1>
-    <span>
-      {{ selectedCityFullName }}
-    </span>
-  </section>
 
-  <a id="official-site" *ngIf="selectedCityWebsite" href={{selectedCityWebsite}} target="_blank" rel="noopener noreferrer">
-    Visit {{selectedCityShortName}}'s Official Website
-  </a>
+    <div id="location-info">
+      <span>
+        {{ selectedCityFullName }}
+      </span>
+      <a id="official-site" *ngIf="selectedCityWebsite" href={{selectedCityWebsite}} target="_blank" rel="noopener noreferrer">
+        Visit {{selectedCityShortName}}'s Official Website
+      </a>
+    </div>
+  </section>
 
   <ngb-carousel>
     <ng-template ngbSlide *ngFor="let pic of selectedCityPhotos">
       <img [src]="pic.getUrl()" alt="Random slide">
     </ng-template>
   </ngb-carousel>
+
+  
+  <button (click)="findWeather()">Get Local Weather</button>
 
   <app-post></app-post>
 </div>

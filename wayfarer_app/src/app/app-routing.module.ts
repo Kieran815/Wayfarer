@@ -14,14 +14,6 @@ const routes: Routes = [
     path: 'cities',
     component: PhoneBookComponent
   },
-  // {
-  //   path: 'cities/:id',
-  //   component: PhoneBookComponent
-  // },
-  // {
-  //   path: 'post',
-  //   component: PostComponent
-  // },
   {
     path: '**',
     component: FourOhFourComponent

@@ -1,19 +1,58 @@
-<p>post works!</p>
 <section *ngIf="googlePlaceReviews.length > 0">
+
   <div class="card" id="card-template" *ngFor="let post of googlePlaceReviews">
-    <div class="card-header">
-      <img class="card-img-top" src="{{post.profile_photo_url}}" alt='{{post.author_name}}Profile Pic'>
-      <a href="{{post.author_url}}" target="_blank" rel="noopener noreferrer">Author Name: {{post.author_name}}</a> <!---->
+    <div class="card-header">      
+      <!-- MODAL START -->
+      <ng-template #content let-modal>
+        <div class="modal-header">
+          Review By:<br/><br/>
+          <h4 class="modal-title" id="modal-basic-title">
+            <section id="author-name">
+              <a href="{{post.author_url}}" target="_blank" rel="noopener noreferrer">{{post.author_name}}</a>
+              <img class="card-img-top" src="{{post.profile_photo_url}}" alt='{{post.author_name}}Profile Pic'>
+            </section>
+          </h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <section id='time-span'>
+            <span>{{post.rating}} / 5, as of {{post.relative_time_description}}</span>
+            <span class="card-text">{{this.stampToTime(post.time)}}</span>
+          </section>
+        </div>
+        <div class="modal-footer">
+          {{post.text}}
+        </div>
+      </ng-template>
+      <!-- MODAL END -->
+      
+      <!-- MODAL / TITLE BUTTON -->
+      <div (click)="open(content)">
+        <h5 class="card-title">
+          {{post.text.substring(0, 100)}}
+        </h5>
+      </div>
+
     </div>
     <div class="card-body">
-      <h5 class="card-title">{{post.text.substring(0, 100)}}</h5>
-      <section id='rating-span'>
-        <span>{{post.rating}} / 5, as of {{post.relative_time_description}}</span>
-        <span class="card-text">{{this.stampToTime(post.time)}}</span>
-      </section>
+      <div id="author-info">
+        <section id="author-name">
+          <img class="card-img-top" src="{{post.profile_photo_url}}" alt='{{post.author_name}}Profile Pic'>
+          <a href="{{post.author_url}}" target="_blank" rel="noopener noreferrer">{{post.author_name}}</a>
+        </section>
+        
+        <section id='time-span'>
+          <span>{{post.rating}} / 5, as of {{post.relative_time_description}}</span>
+          <span class="card-text">{{this.stampToTime(post.time)}}</span>
+        </section>
+      </div>
       <br />
       <p class="card-text">{{post.text.substring(0, 1000)}}</p>
     </div>
-    <button *ngIf="post.text.length > 1000">Read More...</button>
+    <div class="card-footer" *ngIf="post.text.length > 1000">
+      <button type="button" class="btn btn-secondary">Read More...</button>
+    </div>
   </div>
 </section>

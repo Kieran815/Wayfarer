@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
-import { CityService } from 'src/app/city-search/city.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-city',
@@ -14,32 +13,23 @@ export class CityComponent implements OnInit {
   @Input() selectedCityId: string | undefined;
   @Input() selectedCityFullName: string | undefined;
   @Input() selectedCityShortName: string | undefined;
+  @Input() selectedCityZipCode: string | undefined;
   @Input() selectedCityPhotos: any;
   @Input() selectedCityWebsite: string | undefined;
 
-  constructor(private cityService: CityService) { }
+  weather: object | undefined;
 
-  ngOnInit(): void {
-    // this.getData();
-    // this.route.paramMap.subscribe(params => {
-    //   this.selectedCityId = params.get('place_id');
-    //   console.log(params.get('place_id'));
-    // })
-    console.log("City Data Import", this.selectedCityId);
+  constructor(private http: HttpClient) { }
+
+  ngOnInit(): void { }
+
+  findWeather() {
+    this.http
+    .get(`http://api.openweathermap.org/data/2.5/weather?zip=${this.selectedCityZipCode},us&appid=052f26926ae9784c2d677ca7bc5dec98&&units=imperial`)
+    .subscribe((response) => {
+      this.weather = response;
+      console.log(this.weather);
+    });
   }
-
-  // // Receive city Data from `city.service`
-  // getData() {
-  //   this.cityService.data.subscribe((response: any) => {
-  //     console.log("City Component Get Data Response: ", response);
-  //     this.selectedCity = response;
-  //     this.selectedCityId = response.place_id;
-  //     this.selectedCityFullName = response.formatted_address;
-  //     this.selectedCityShortName = response.name;
-  //     this.selectedCityPhotos = response.photos;
-  //     this.selectedCityWebsite = response.website;
-  //   })
-  //   console.log("City ID: " + this.selectedCityId);
-  // }
 
 }
