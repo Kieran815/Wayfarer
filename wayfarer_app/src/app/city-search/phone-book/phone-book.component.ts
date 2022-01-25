@@ -24,25 +24,16 @@ export class PhoneBookComponent implements OnInit {
 
   // Receive city Data from `city.service`
   getData() {
-
-    this.selectedCity = null;
-    this.selectedCityId = '';
-    this.selectedCityFullName = undefined;
-    this.selectedCityShortName = '';
-    this.selectedCityZipCode = '';
-    this.selectedCityPhotos = [];
-    this.selectedCityWebsite = '';
-
     this.cityService.data.subscribe((response: any) => {
       this.selectedCity = response;
       this.selectedCityId = response.place_id;
       this.selectedCityFullName = response.formatted_address;
       this.selectedCityShortName = response.name;
-      if(response.address_components) {
-        this.selectedCityZipCode = response.address_components[7].long_name;
-      }
       this.selectedCityPhotos = response.photos;
       this.selectedCityWebsite = response.website;
+      if(response.address_components[7].long_name != undefined) {
+        this.selectedCityZipCode = response.address_components[7].long_name;
+      }
     })
   }
 }

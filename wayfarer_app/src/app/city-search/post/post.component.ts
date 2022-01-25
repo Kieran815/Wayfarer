@@ -27,8 +27,8 @@ export class PostComponent implements OnInit {
 
   getData() {
     this.cityService.data.subscribe((response: any) => {
-      // clear prior post data first
       this.googlePlaceReviews = [];
+      // clear prior post data first
       this.googlePlaceReviews = [...response.reviews];
       if(this.googlePlaceReviews.length > 0) {
         this.stampToTime(this.googlePlaceReviews[4].time);
