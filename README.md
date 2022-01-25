@@ -1,61 +1,73 @@
-# <img src="https://cloud.githubusercontent.com/assets/7833470/10899314/63829980-8188-11e5-8cdd-4ded5bcb6e36.png" height="60"> Wayfarer
+# [Wayfarer](https://kmilligan.info/Wayfarer)
 
-![](https://media.giphy.com/media/lXC2gmHf2ypUs/giphy.gif)
+## Find Your Way
 
-## Brief
+Powered by Google Places API, Wayfarer is designed to let you gather concise information about the places you want to visit.
 
-We have been commissioned to build a travel community, code-named **Project Wayfarer** for now, for users to share tips (AKA posts) about their favorite locations around the world.
+-------------------------------
+## Technologies
 
-## Client Contract
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
 
-The client has provided basic wireframes and user stories. In some cases, these requirements may be vague or incomplete.
+![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-* [Wireframes](./wireframes.png)
-* [User Stories](./user-stories.md)
+![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white)
 
-## Process
 
-The client contract consists of three core sprints and a bonus. Each sprint contains a set of user stories. You may not complete all of the sprints within the time period, and that's ok. **The goal is to gain experience working on a development project in a group while navigating a client's feature list.**
+[@ng-bootstrap/ng-bootstrap](https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap)
 
-**IMPORTANT:** You will not begin a new sprint or start on a bonus without completing the previous sprint.
+[@ngx-google-places-autocomplete](https://www.npmjs.com/package/ngx-google-places-autocomplete)
 
-You will work in groups of 2-4, and we expect you to **pair program** for the majority of the time you're writing code.
+-------------------------------
 
-Commit changes at least once for each user story. Put effort into your **design**. Use a CSS framework (e.g. Bootstrap or Materialize), partials, and some custom CSS or Sass/Less.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
-Work as **[git collaborators](./git-collaboration-workflow.md), build on feature branches, and submit pull requests for approval and merging**.
+## Development server
 
-After you have completed your project, **deploy to heroku (optional)** to get practice getting the app online. The earlier you resolve deployment, the easier it will be to fix bugs.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-**Refactor** your code after each sprint, considering:
+The ```landing.component.html``` will need to be edited to run in a local environment.
 
-* Indentation
-* Readability/clarity
-* Naming
-* Organization
-* Commenting
-* DRYness
+```
+landing.component.html
+```
 
-## Questions to Ask Yourselves
+```
+<!-- update for deployment to `/Wayfarer/cities` to route correctly on gh-pages -->
+  <a href="/Wayfarer/cities" class="btn btn-primary" id="enter-site">Search</a>
+```
 
-1. **Are you all clear about what the client wants?** Identify vague areas. Seek clarification in any cases where you feel less confident about your interpretation of the client's vision.
+**Register for a Google API @ [Google Cloud Platform](https://console.cloud.google.com/).**
+- add api key to google script tag in `index.html`
 
-2. **What will the UX/UI flow be?** Hammer out any areas of ambiguity in the wireframes
+```
+index.html
+```
 
-3. **What are the major milestones or components that you need to complete?** How can these be turned into tasks that group members can complete in pairs? Where do these milestones overlap and how will those related tasks be managed?
+```
+<!-- Places script -->
+<script src="https://maps.googleapis.com/maps/api/js?key=<YOUR_API_KEY_HERE>&libraries=places&language=en"></script>
+```
 
-4. **What milestones are you and your group members interested in working on?** How can you effectively delegate the work into pairs so that each group member is interested, challenged, and productive?
+## Links
 
-## Presentation
+[How To Build An Angular 12 Application With Google Places Autocomplete](https://www.c-sharpcorner.com/article/how-to-build-an-angular-12-application-with-google-places-autocomplete/)
 
-Each group will present their project at the end of the activity for **5-10 minutes**.
+[ngx-google-places-autocomplete](https://www.npmjs.com/package/ngx-google-places-autocomplete)
 
-Each member of your group should speak for equal parts during your presentation and mention which parts of the project they worked on.
+[Google Maps Platform Place Details](https://developers.google.com/maps/documentation/places/web-service/details#PlaceReview)
 
-**Your presentation should include:**
+[Google Cloud Platform](https://console.cloud.google.com/)
 
-* Tour (demo) of your app, ideally deployed on heroku (but not required).
-* How did your group approach the requirements? (mention anything unique or creative your group chose to do)
-* What was easier than you thought? What was more challenging?
-* What is a lesson you will carry forward to working on your next project?
-* Shout outs for fellow students!
+[Adding City Images to My React App](https://codeburst.io/adding-city-images-to-your-react-app-14c937df2db2)
+
+[Dynamic Carousel In Angular](https://stackblitz.com/edit/dynamic-carousel-in-angular?file=src%2Fapp%2Fcarousel%2Fcarousel.component.html)
+
+
+## Todo List:
+
+- App Modularized to allow Implementation of Google OAuth
+- More Styling on components
+- Fix type error for expected undefined variable
+- Synthetic routing for places
+- Render Weather in Modal
